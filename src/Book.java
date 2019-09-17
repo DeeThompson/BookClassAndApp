@@ -5,6 +5,7 @@ public class Book {
     private int price;
     private boolean isInStock;
     private String Displaytext;
+    private double displayCost;
 
     public String getTitle() {
         return title;
@@ -60,15 +61,35 @@ public class Book {
 
     }
 
+    public Book(String wating_to_exhale, String terri_mcMillian, String romance_novel, String s, String yes) {
 
-    public void getDisplaytext() {
+
+    }
+
+    public String getDisplaytext() {
 
         System.out.println("Author name:" +getAuthor());
         System.out.println("Author title:" +getTitle());
         System.out.println("Author Description:" +getDescription());
+        System.out.println("Book cost is:" +getDisplayCost());
+        return Displaytext;
 
 
+    }
 
+    private double getDisplayCost() {
+
+        return displayCost;
+    }
+
+
+    public double getDisplayCost (int number) {
+        double total = 0;
+
+        if (isInStock()) {
+            total = getPrice() * number;
+        }
+        return total;
     }
 }
 
